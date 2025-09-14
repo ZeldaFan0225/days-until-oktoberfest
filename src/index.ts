@@ -20,12 +20,14 @@ export interface DaysUntilOptions {
  * @returns {{start: Date, end: Date}} - The start and end dates of Oktoberfest.
  */
 export function getOktoberfestDates(year: number): { start: Date; end: Date } {
-    const september15 = new Date(year, 8, 15);
+    const september16 = new Date(year, 8, 16);
     const octoberFirst = new Date(year, 9, 1);
 
     // Find first Saturday after Sept 15
-    let start = new Date(september15);
-    while (start.getDay() !== 6) start.setDate(start.getDate() + 1);
+    let start = new Date(september16);
+    if(start.getDay() !== 6) {
+        start.setDate(start.getDate() + (6 - start.getDay()));
+    }
 
     // Find first Sunday in October
     let firstSundayOct = new Date(octoberFirst);
@@ -51,17 +53,18 @@ export function getOktoberfestDates(year: number): { start: Date; end: Date } {
  */
 export function daysUntilOktoberfest(options: DaysUntilOptions = {}): number {
     const today = options.today || new Date();
-    const year = today.getFullYear();
+    const todayNormalized = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const year = todayNormalized.getFullYear();
 
     let { start, end } = getOktoberfestDates(year);
 
-    if (today > end) {
+    if (todayNormalized > end) {
         ({ start, end } = getOktoberfestDates(year + 1));
     }
 
-    if (today >= start && today <= end) return 0;
+    if (todayNormalized >= start && todayNormalized <= end) return 0;
 
-    const diffTime = start.setHours(0, 0, 0, 0) - today.setHours(0, 0, 0, 0);
+    const diffTime = start.getTime() - todayNormalized.getTime();
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 }
 

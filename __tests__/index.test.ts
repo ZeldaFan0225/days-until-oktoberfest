@@ -60,4 +60,9 @@ describe("daysUntilOktoberfest", () => {
         const days = daysUntilOktoberfest({ today: end });
         expect(days).toBe(0);
     });
+
+    it("returns correct amount of days if sept 15 is a saturday", () => {
+        const days = daysUntilOktoberfest({ today: new Date(2018, 8, 15) });
+        expect(days).toBe(7);
+    });
 });
