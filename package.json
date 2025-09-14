@@ -1,0 +1,42 @@
+{
+    "name": "days-until-oktoberfest",
+    "version": "0.0.0",
+    "description": "Calculate days until the next Oktoberfest. Returns 0 if currently happening.",
+    "license": "MIT",
+    "author": "ZeldaFan0225",
+    "types": "dist/index.d.ts",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "test": "jest",
+        "prepublishOnly": "npm run test && npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ZeldaFan0225/days-until-oktoberfest.git"
+    },
+    "devDependencies": {
+        "@types/jest": "^30.0.0",
+        "jest": "^30.1.3",
+        "ts-jest": "^29.4.1",
+        "typescript": "^5.9.2"
+    },
+    "bin": {
+        "days-until-oktoberfest": "bin/cli.js"
+    },
+    "keywords": [
+        "oktoberfest",
+        "munich",
+        "beer",
+        "festival",
+        "date",
+        "countdown"
+    ],
+    "bugs": {
+        "url": "https://github.com/ZeldaFan0225/days-until-oktoberfest/issues"
+    },
+    "homepage": "https://github.com/ZeldaFan0225/days-until-oktoberfest#readme",
+    "engines": {
+        "node": ">=14"
+    }
+}
