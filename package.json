@@ -1,6 +1,6 @@
 {
     "name": "days-until-oktoberfest",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Calculate days until the next Oktoberfest. Returns 0 if currently happening.",
     "license": "MIT",
     "author": "ZeldaFan0225",
