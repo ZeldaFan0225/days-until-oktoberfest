@@ -6,6 +6,7 @@ __tests__/
 jest.config.js
 node_modules/
 tsconfig.json
+.github/
 
 # Don't ignore dist and bin
 !dist/
