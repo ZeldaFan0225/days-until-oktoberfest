@@ -1,6 +1,9 @@
 
 # days-until-oktoberfest 🍺🎡🍻
 
+[![npm version](https://img.shields.io/npm/v/days-until-oktoberfest.svg)](https://www.npmjs.com/package/days-until-oktoberfest)
+[![npm downloads](https://img.shields.io/npm/dm/days-until-oktoberfest.svg)](https://www.npmjs.com/package/days-until-oktoberfest)
+
 Calculate how many days until the next Oktoberfest in Munich.
 
 Returns `0` if Oktoberfest is currently happening.
